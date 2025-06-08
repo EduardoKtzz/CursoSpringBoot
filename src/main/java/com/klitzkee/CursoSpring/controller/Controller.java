@@ -1,4 +1,4 @@
-package com.klitzkee.CursoSpring.Controller;
+package com.klitzkee.CursoSpring.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
