@@ -1,11 +1,9 @@
 package com.klitzkee.CursoSpring.controller;
 
+import com.klitzkee.CursoSpring.domain.User;
 import com.klitzkee.CursoSpring.service.Services;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/controller")  //http://localhost:8080/controller
@@ -24,10 +22,11 @@ public class Controller {
         return services.helloService("Eduardo");
     }
 
-    @PostMapping("")
-    public String helloPost() {
-
+    //Aqui estamos a definir que um POST vai enviar informações e vamos recebê-las pelo 'corpo' dela
+    //@RequestBody é para recebermos as aplicações
+    @PostMapping("/{id}")
+    public String helloPost(@PathVariable("id") String id,@RequestParam(value = "filter", defaultValue = "nenhum") String filter, @RequestBody User body) {
+        return "Bem vindo " + filter;
     }
-    
 }
 
