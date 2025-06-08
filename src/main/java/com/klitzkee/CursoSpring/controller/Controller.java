@@ -3,6 +3,7 @@ package com.klitzkee.CursoSpring.controller;
 import com.klitzkee.CursoSpring.service.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +22,11 @@ public class Controller {
     @GetMapping
     public String helloController() {
         return services.helloService("Eduardo");
+    }
+
+    @PostMapping("")
+    public String helloPost() {
+
     }
     
 }
